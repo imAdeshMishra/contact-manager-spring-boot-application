@@ -21,14 +21,15 @@ public class User {
     private String imageUrl;
     @Column(length = 200)
     private String about;
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "user")
-    private List<Contact> contacts=new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<Contact> contacts = new ArrayList<>();
 
     public User() {
         super();
     }
 
-    public User(int id, String name, String email, String password, String role, boolean enabled, String imageUrl, String about) {
+    public User(int id, String name, String email, String password, String role, boolean enabled, String imageUrl,
+            String about) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -109,5 +110,13 @@ public class User {
 
     public void setContacts(List<Contact> contacts) {
         this.contacts = contacts;
+    }
+
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return "User [id=" + id + ", name=" + name + ", email=" + email
+                + ", password=" + password + ", role=" + role + ", enabled=" + enabled + ", imageUrl=" + imageUrl
+                + ", about=" + about + ", contacts=" + contacts + "]";
     }
 }

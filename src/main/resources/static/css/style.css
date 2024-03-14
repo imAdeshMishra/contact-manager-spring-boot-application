@@ -1,6 +1,5 @@
 body {
-  /* background: #543675 !important; */
-  /* background: #e2e2e2 !important; */
+  background: #e2e2e2 !important;
 }
 
 .bg-primary {
@@ -15,4 +14,9 @@ body {
   /* background: black; */
   background-size: cover;
   color: white;
+}
+
+.my-card {
+  padding: 20px;
+  background: white;
 }
