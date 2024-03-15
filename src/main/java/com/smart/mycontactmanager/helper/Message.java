@@ -12,6 +12,16 @@ public class Message {
         return content;
     }
 
+    public Message() {
+        super();
+    }
+
+    public Message(String content, String type) {
+        super();
+        this.content = content;
+        this.type = type;
+    }
+
     /**
      * @param content the content to set
      */
