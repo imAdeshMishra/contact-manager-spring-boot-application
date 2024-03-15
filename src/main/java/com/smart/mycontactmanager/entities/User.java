@@ -1,6 +1,9 @@
 package com.smart.mycontactmanager.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,11 +15,18 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
+    @NotBlank(message = "User name cannot be blank")
+    @Size(min = 3, max = 20, message = "Name must have 3 to 20 chracters")
     private String name;
+
+    @Email()
     @Column(unique = true)
     private String email;
+
     private String password;
     private String role;
+
     private boolean enabled;
     private String imageUrl;
     @Column(length = 200)

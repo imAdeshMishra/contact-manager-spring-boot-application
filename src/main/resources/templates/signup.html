@@ -27,10 +27,11 @@
               <h1 class="text-center">Register Here !!</h1>
 
               <form
-                action=""
+                action="submit"
                 th:action="@{/do_register}"
                 method="post"
                 th:object="${user}"
+                id="register_form"
               >
                 <!-- name field -->
 
@@ -46,6 +47,9 @@
                     required
                     th:value="${user.name}"
                   />
+
+                  <!-- Display validation error if there's one for the name field -->
+                  <div class="invalid-feedback" id="name_error_message"></div>
                 </div>
 
                 <!-- email field -->
@@ -86,7 +90,7 @@
                 <div class="form-group">
                   <textarea
                     name="about"
-                    th:value="${user.about}"
+                    th:text="${user.about}"
                     class="form-control"
                     placeholder="Enter about yourself"
                     rows="5"
